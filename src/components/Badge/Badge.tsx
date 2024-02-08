@@ -3,7 +3,14 @@ import React, { HTMLProps } from "react";
 import type { ClassName, PropsWithSpread, ValueOf } from "types";
 
 export const BadgeType = {
+  /**
+   * Use ROUNDED_LARGE_NUMBER variant when the value of the badge represents a type of information where differences between large amounts of items are relevant, it should include a decimal unit prefix and round the value.
+   *
+   */
   ROUNDED_LARGE_NUMBER: "ROUNDED_LARGE_NUMBER",
+  /**
+   * Use UNDEFINED_LARGE_NUMBER variant when the amount of items is only relevant for small values. When the value grows further than 999, the badge should show "999+"
+   */
   UNDEFINED_LARGE_NUMBER: "UNDEFINED_LARGE_NUMBER",
 } as const;
 
@@ -54,6 +61,12 @@ const clamp = (value: number) => {
   }
   return value;
 };
+
+/**
+ * This is a [React](https://reactjs.org/) component for the Vanilla [Badge](https://vanillaframework.io/docs/patterns/badge).
+ *
+ * It can be used to display a numeric values.
+ */
 
 const Badge = ({
   value,
